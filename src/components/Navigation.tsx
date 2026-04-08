@@ -38,18 +38,10 @@ export default function Navigation() {
                 href="https://www.nautilus-app.com/c/ohana/p/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-display px-5 py-2 bg-white text-[#715924] font-extrabold rounded-lg hover:bg-[#F5F0E8] transition-all border-2 border-[#715924]"
-              >
-                Manage Membership
-              </a>
-              <a
-                href="https://ohanacarwash.mywashaccount.com/"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="font-display px-5 py-2 bg-[#f7d70e] text-[#715924] font-extrabold rounded-lg hover:bg-[#e5c60d] transition-all border-2 border-[#715924]"
                 style={{ boxShadow: '3px 3px 0px 0px #715924' }}
               >
-                Join Ohana Unlimited
+                Manage Membership
               </a>
             </div>
 
@@ -82,17 +74,9 @@ export default function Navigation() {
                   href="https://www.nautilus-app.com/c/ohana/p/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-display px-5 py-2.5 bg-white text-[#715924] font-extrabold rounded-lg text-center border-2 border-[#715924]"
-                >
-                  Manage Membership
-                </a>
-                <a
-                  href="https://ohanacarwash.mywashaccount.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="font-display px-5 py-2.5 bg-[#f7d70e] text-[#715924] font-extrabold rounded-lg text-center border-2 border-[#715924]"
                 >
-                  Join Ohana Unlimited
+                  Manage Membership
                 </a>
               </div>
             </div>
