@@ -35,6 +35,14 @@ export default function Navigation() {
               <Link href="/careers" className="font-display text-[#715924] font-extrabold text-sm uppercase hover:text-[#4A3520] transition-colors">Careers</Link>
 
               <a
+                href="https://www.nautilus-app.com/c/ohana/p/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display px-5 py-2 bg-white text-[#715924] font-extrabold rounded-lg hover:bg-[#F5F0E8] transition-all border-2 border-[#715924]"
+              >
+                Manage Membership
+              </a>
+              <a
                 href="https://ohanacarwash.mywashaccount.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -70,6 +78,14 @@ export default function Navigation() {
                 <Link href="/environment" className="font-display text-[#715924] font-extrabold uppercase hover:text-[#4A3520] transition-colors py-2">Environment</Link>
                 <Link href="/fundraising" className="font-display text-[#715924] font-extrabold uppercase hover:text-[#4A3520] transition-colors py-2">Fundraising</Link>
                 <Link href="/careers" className="font-display text-[#715924] font-extrabold uppercase hover:text-[#4A3520] transition-colors py-2">Careers</Link>
+                <a
+                  href="https://www.nautilus-app.com/c/ohana/p/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-display px-5 py-2.5 bg-white text-[#715924] font-extrabold rounded-lg text-center border-2 border-[#715924]"
+                >
+                  Manage Membership
+                </a>
                 <a
                   href="https://ohanacarwash.mywashaccount.com/"
                   target="_blank"
