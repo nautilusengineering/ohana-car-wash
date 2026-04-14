@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#715924] text-white py-14">
+    <footer className="bg-[#715924] text-white py-10 md:py-14">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           {/* Logo & Info */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2">
             <Image
               src="/logo.png"
               alt="Ohana Car Wash"
@@ -71,7 +71,11 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-10 pt-6 border-t border-white/10 text-center text-white/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Ohana Car Wash. All Rights Reserved.</p>
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <img src="/hibiscus.png" alt="" className="w-5 h-5 opacity-40 -rotate-12" />
+            <p>&copy; {new Date().getFullYear()} Ohana Car Wash. All Rights Reserved.</p>
+            <img src="/hibiscus.png" alt="" className="w-5 h-5 opacity-40 rotate-12" style={{ filter: 'hue-rotate(30deg)' }} />
+          </div>
         </div>
       </div>
     </footer>

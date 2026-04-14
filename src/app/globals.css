@@ -210,15 +210,24 @@
 /* Text outline/stroke for headings - yellow inner outline + cream outer outline */
 .text-outline-brown {
   color: #8B6B2A;
-  -webkit-text-stroke: 5px #DEA726;
+  -webkit-text-stroke: 3px #DEA726;
   paint-order: stroke fill;
   text-shadow:
-    0 -7px 0 #FFFDF0, 0 7px 0 #FFFDF0, -7px 0 0 #FFFDF0, 7px 0 0 #FFFDF0,
-    -5px -5px 0 #FFFDF0, 5px -5px 0 #FFFDF0, -5px 5px 0 #FFFDF0, 5px 5px 0 #FFFDF0,
-    -3px -7px 0 #FFFDF0, 3px -7px 0 #FFFDF0, -3px 7px 0 #FFFDF0, 3px 7px 0 #FFFDF0,
-    -7px -3px 0 #FFFDF0, 7px -3px 0 #FFFDF0, -7px 3px 0 #FFFDF0, 7px 3px 0 #FFFDF0,
-    -6px -4px 0 #FFFDF0, 6px -4px 0 #FFFDF0, -6px 4px 0 #FFFDF0, 6px 4px 0 #FFFDF0,
-    -4px -6px 0 #FFFDF0, 4px -6px 0 #FFFDF0, -4px 6px 0 #FFFDF0, 4px 6px 0 #FFFDF0;
+    0 -4px 0 #FFFDF0, 0 4px 0 #FFFDF0, -4px 0 0 #FFFDF0, 4px 0 0 #FFFDF0,
+    -3px -3px 0 #FFFDF0, 3px -3px 0 #FFFDF0, -3px 3px 0 #FFFDF0, 3px 3px 0 #FFFDF0;
+}
+
+@media (min-width: 768px) {
+  .text-outline-brown {
+    -webkit-text-stroke: 5px #DEA726;
+    text-shadow:
+      0 -7px 0 #FFFDF0, 0 7px 0 #FFFDF0, -7px 0 0 #FFFDF0, 7px 0 0 #FFFDF0,
+      -5px -5px 0 #FFFDF0, 5px -5px 0 #FFFDF0, -5px 5px 0 #FFFDF0, 5px 5px 0 #FFFDF0,
+      -3px -7px 0 #FFFDF0, 3px -7px 0 #FFFDF0, -3px 7px 0 #FFFDF0, 3px 7px 0 #FFFDF0,
+      -7px -3px 0 #FFFDF0, 7px -3px 0 #FFFDF0, -7px 3px 0 #FFFDF0, 7px 3px 0 #FFFDF0,
+      -6px -4px 0 #FFFDF0, 6px -4px 0 #FFFDF0, -6px 4px 0 #FFFDF0, 6px 4px 0 #FFFDF0,
+      -4px -6px 0 #FFFDF0, 4px -6px 0 #FFFDF0, -4px 6px 0 #FFFDF0, 4px 6px 0 #FFFDF0;
+  }
 }
 
 .text-outline-yellow {
@@ -228,15 +237,24 @@
 
 .text-stroke-heading {
   color: #8B6B2A;
-  -webkit-text-stroke: 5px #DEA726;
+  -webkit-text-stroke: 3px #DEA726;
   paint-order: stroke fill;
   text-shadow:
-    0 -7px 0 #FFFDF0, 0 7px 0 #FFFDF0, -7px 0 0 #FFFDF0, 7px 0 0 #FFFDF0,
-    -5px -5px 0 #FFFDF0, 5px -5px 0 #FFFDF0, -5px 5px 0 #FFFDF0, 5px 5px 0 #FFFDF0,
-    -3px -7px 0 #FFFDF0, 3px -7px 0 #FFFDF0, -3px 7px 0 #FFFDF0, 3px 7px 0 #FFFDF0,
-    -7px -3px 0 #FFFDF0, 7px -3px 0 #FFFDF0, -7px 3px 0 #FFFDF0, 7px 3px 0 #FFFDF0,
-    -6px -4px 0 #FFFDF0, 6px -4px 0 #FFFDF0, -6px 4px 0 #FFFDF0, 6px 4px 0 #FFFDF0,
-    -4px -6px 0 #FFFDF0, 4px -6px 0 #FFFDF0, -4px 6px 0 #FFFDF0, 4px 6px 0 #FFFDF0;
+    0 -4px 0 #FFFDF0, 0 4px 0 #FFFDF0, -4px 0 0 #FFFDF0, 4px 0 0 #FFFDF0,
+    -3px -3px 0 #FFFDF0, 3px -3px 0 #FFFDF0, -3px 3px 0 #FFFDF0, 3px 3px 0 #FFFDF0;
+}
+
+@media (min-width: 768px) {
+  .text-stroke-heading {
+    -webkit-text-stroke: 5px #DEA726;
+    text-shadow:
+      0 -7px 0 #FFFDF0, 0 7px 0 #FFFDF0, -7px 0 0 #FFFDF0, 7px 0 0 #FFFDF0,
+      -5px -5px 0 #FFFDF0, 5px -5px 0 #FFFDF0, -5px 5px 0 #FFFDF0, 5px 5px 0 #FFFDF0,
+      -3px -7px 0 #FFFDF0, 3px -7px 0 #FFFDF0, -3px 7px 0 #FFFDF0, 3px 7px 0 #FFFDF0,
+      -7px -3px 0 #FFFDF0, 7px -3px 0 #FFFDF0, -7px 3px 0 #FFFDF0, 7px 3px 0 #FFFDF0,
+      -6px -4px 0 #FFFDF0, 6px -4px 0 #FFFDF0, -6px 4px 0 #FFFDF0, 6px 4px 0 #FFFDF0,
+      -4px -6px 0 #FFFDF0, 4px -6px 0 #FFFDF0, -4px 6px 0 #FFFDF0, 4px 6px 0 #FFFDF0;
+  }
 }
 
 .text-stroke-heading-blue {
@@ -282,13 +300,12 @@
   }
 }
 
-/* Premium button glow - only on hover */
-.premium-btn-glow {
-  box-shadow: 3px 3px 0px 0px #715924;
-  transition: box-shadow 0.3s ease;
+/* Premium button glow - only on hover, turns yellow */
+.premium-btn-hover-glow {
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.premium-btn-glow:hover {
+.premium-btn-hover-glow:hover {
   box-shadow:
     0 0 18px 4px rgba(240, 210, 100, 0.8),
     0 0 35px 10px rgba(240, 210, 100, 0.45),

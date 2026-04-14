@@ -7,6 +7,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import IframeDrawer from "@/components/IframeDrawer";
 
+// Classic Hawaiian hibiscus using actual image
+function HibiscusFlower({ className = "", white = false }: { className?: string; white?: boolean }) {
+  return (
+    <img
+      src="/hibiscus.png"
+      alt=""
+      className={className}
+      style={{
+        filter: white ? 'brightness(0) invert(1)' : undefined,
+      }}
+    />
+  );
+}
+
 // Warm, earthy brand colors - not too bright
 const colors = {
   gold: "#C9982E",
@@ -116,7 +130,7 @@ function HeroSection() {
                 href="https://ohanacarwash.mywashaccount.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 sm:px-7 py-3 sm:py-3.5 bg-[#C9982E] text-white font-semibold rounded-full hover:bg-[#A67C1A] transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-5 sm:px-7 py-3 sm:py-3.5 bg-[#C9982E] text-white font-semibold rounded-full hover:bg-[#715924] hover:text-white transition-all shadow-lg hover:shadow-xl"
               >
                 Join Unlimited
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -262,23 +276,6 @@ function PerksSection() {
       ),
     },
     {
-      title: "Vending Machines",
-      description: "On-site towels, cleaners, and air fresheners for your convenience",
-      icon: (
-        <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          {/* Machine body */}
-          <rect x="4" y="2" width="16" height="20" rx="2" />
-          {/* Product rows */}
-          <rect x="7" y="5" width="4" height="3" rx="0.5" />
-          <rect x="13" y="5" width="4" height="3" rx="0.5" />
-          <rect x="7" y="10" width="4" height="3" rx="0.5" />
-          <rect x="13" y="10" width="4" height="3" rx="0.5" />
-          {/* Dispensing slot */}
-          <rect x="7" y="16" width="10" height="3" rx="0.5" />
-        </svg>
-      ),
-    },
-    {
       title: "Mat Cleaner",
       description: "Deep clean your mats with our credit card-operated machine",
       icon: (
@@ -314,7 +311,11 @@ function PerksSection() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-14">
-          <p className="font-script text-[#F7D711] text-2xl mb-2">Every Visit</p>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <HibiscusFlower className="w-7 h-7 -rotate-12" />
+            <p className="font-script text-[#F7D711] text-2xl">Every Visit</p>
+            <HibiscusFlower className="w-7 h-7 rotate-12" />
+          </div>
           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-stroke-heading mb-4">
             Enjoy Extra Perks!
           </h2>
@@ -324,7 +325,7 @@ function PerksSection() {
         </div>
 
         {/* Perks Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {perks.map((perk) => (
             <WoodBoardCard key={perk.title}>
               <div className="p-6 text-center">
@@ -413,6 +414,7 @@ function WashPackagesSection() {
       chipBorder: "",
       chipText: "",
       premium: false,
+      productId: "4d6faf8e-9421-4334-a5e8-1e1fef8fb4e7",
     },
   ];
 
@@ -421,7 +423,11 @@ function WashPackagesSection() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-8">
-          <p className="font-script text-[#F7D711] text-2xl mb-2">Find Your Wave</p>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <HibiscusFlower className="w-7 h-7 -rotate-12" />
+            <p className="font-script text-[#F7D711] text-2xl">Find Your Wave</p>
+            <HibiscusFlower className="w-7 h-7 rotate-12" />
+          </div>
           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-stroke-heading mb-4">
             Ohana Washes
           </h2>
@@ -476,7 +482,7 @@ function WashPackagesSection() {
               )}
 
               {/* Wooden board - real wood planks like original site */}
-              <WashWoodBoard className={`h-full ${pkg.premium ? 'premium-gold-glow' : ''}`}>
+              <WashWoodBoard className="h-full">
                 <div className="p-3 pt-10 h-full flex flex-col">
                   {/* Fixed-height wood header area so white containers align */}
                   <div className="h-[170px] flex flex-col items-center justify-end">
@@ -541,10 +547,10 @@ function WashPackagesSection() {
                       onClick={() => openPurchaseDrawer(pkg.productId)}
                       className={`block w-full py-3 font-bold rounded-full text-center transition-all cursor-pointer ${
                         pkg.premium
-                          ? 'bg-[#715924] text-[#f7d70e] hover:bg-[#5A4720] premium-btn-glow'
+                          ? 'bg-[#715924] text-[#f7d70e] hover:bg-[#f7d70e] hover:text-[#715924] premium-btn-hover-glow'
                           : 'bg-[#f7d70e] text-[#715924] hover:bg-[#e5c60d] shadow-md'
                       }`}
-                      style={pkg.premium ? undefined : { boxShadow: '3px 3px 0px 0px #715924' }}
+                      style={pkg.premium ? { boxShadow: '3px 3px 0px 0px #715924' } : { boxShadow: '3px 3px 0px 0px #715924' }}
                     >
                       {isUnlimited ? 'Join Unlimited' : 'Get Started'}
                     </button>
@@ -600,7 +606,11 @@ function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left - Content */}
           <div>
-            <p className="font-script text-[#f7d70e] text-2xl mb-2">Aloha!</p>
+            <div className="flex items-center gap-2 mb-2">
+              <HibiscusFlower className="w-7 h-7 -rotate-12" white />
+              <p className="font-script text-[#f7d70e] text-2xl">Aloha!</p>
+              <HibiscusFlower className="w-7 h-7 rotate-12" white />
+            </div>
             <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-4 md:mb-6">
               About Ohana
             </h2>
@@ -672,7 +682,11 @@ function LocationSection() {
       <div className="relative z-10 container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8 md:mb-16">
-          <p className="font-script text-[#f7d70e] text-2xl mb-2">Come Visit!</p>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <HibiscusFlower className="w-7 h-7 -rotate-12" white />
+            <p className="font-script text-[#f7d70e] text-2xl">Come Visit!</p>
+            <HibiscusFlower className="w-7 h-7 rotate-12" white />
+          </div>
           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-4">
             Find Us in Monroe
           </h2>
@@ -770,7 +784,11 @@ function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
-            <p className="font-script text-[#F7D711] text-2xl mb-3">Get in Touch</p>
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <HibiscusFlower className="w-7 h-7 -rotate-12" />
+              <p className="font-script text-[#F7D711] text-2xl">Get in Touch</p>
+              <HibiscusFlower className="w-7 h-7 rotate-12" />
+            </div>
             <h2 className="text-3xl md:text-5xl font-display font-extrabold text-[#715924]">
               Contact Us
             </h2>
