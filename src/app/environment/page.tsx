@@ -16,8 +16,10 @@ export default function EnvironmentPage() {
       <PageHero title="Committed to Sustainability" subtitle="Our Planet" />
 
       {/* Intro with turtle mascot */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 relative overflow-hidden">
+        <img src="/hibiscus.png" alt="" className="absolute top-12 -left-10 w-44 md:w-56 opacity-[0.05] pointer-events-none -rotate-[10deg]" />
+        <img src="/corner-hibiscus-br.png" alt="" className="absolute bottom-6 -right-4 w-24 md:w-32 opacity-[0.08] pointer-events-none rotate-6" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
             <div className="shrink-0">
               <Image

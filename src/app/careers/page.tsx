@@ -1,22 +1,23 @@
+"use client";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Careers - Ohana Car Wash",
-  description: "Join the Ohana Car Wash team in Monroe, OH. We're looking for enthusiastic individuals with a passion for delivering excellent service.",
-};
+import useNautilusEmbed from "@/hooks/useNautilusEmbed";
 
 export default function CareersPage() {
+  useNautilusEmbed();
+
   return (
     <main className="min-h-screen">
       <Navigation />
       <PageHero title="Join Our Ohana!" subtitle="Careers" />
 
       {/* Benefits - white */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        <img src="/hibiscus.png" alt="" className="absolute top-10 -right-10 w-44 md:w-56 opacity-[0.05] pointer-events-none rotate-[20deg]" />
+        <img src="/corner-hibiscus-tl.png" alt="" className="absolute bottom-12 -left-4 w-24 md:w-32 opacity-[0.08] pointer-events-none -rotate-6" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-14">
             <p className="font-script text-[#F7D711] text-2xl mb-3">Perks</p>
             <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#715924]">
@@ -77,48 +78,19 @@ export default function CareersPage() {
               </h2>
             </div>
 
-            <form className="bg-white/10 rounded-2xl p-6 md:p-8 space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="first-name" className="block font-display font-bold text-white mb-1 text-sm">First Name</label>
-                  <input type="text" id="first-name" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="First name" />
-                </div>
-                <div>
-                  <label htmlFor="last-name" className="block font-display font-bold text-white mb-1 text-sm">Last Name</label>
-                  <input type="text" id="last-name" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="Last name" />
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="career-email" className="block font-display font-bold text-white mb-1 text-sm">Email</label>
-                  <input type="email" id="career-email" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label htmlFor="career-phone" className="block font-display font-bold text-white mb-1 text-sm">Phone</label>
-                  <input type="tel" id="career-phone" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="(555) 123-4567" />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="employment-type" className="block font-display font-bold text-white mb-1 text-sm">Employment Type</label>
-                <select id="employment-type" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-[#F7D711]">
-                  <option value="" className="text-[#4A3520]">Select...</option>
-                  <option value="full-time" className="text-[#4A3520]">Full-Time</option>
-                  <option value="part-time" className="text-[#4A3520]">Part-Time</option>
-                  <option value="either" className="text-[#4A3520]">Either</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="availability" className="block font-display font-bold text-white mb-1 text-sm">Availability</label>
-                <input type="text" id="availability" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="e.g. Weekdays 9AM-5PM, Weekends open" />
-              </div>
-              <div>
-                <label htmlFor="career-message" className="block font-display font-bold text-white mb-1 text-sm">Anything else? (Optional)</label>
-                <textarea id="career-message" rows={3} className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711] resize-none" placeholder="Tell us about yourself..." />
-              </div>
-              <button type="submit" className="w-full font-display px-8 py-3 bg-[#F7D711] text-[#715924] font-extrabold rounded-lg hover:bg-[#e5c60d] transition-all border-2 border-[#715924] text-lg" style={{ boxShadow: '3px 3px 0px 0px #715924' }}>
-                Submit Application
-              </button>
-            </form>
+            <div
+              className="rounded-xl p-4 md:p-6"
+              style={{
+                background: '#715924',
+                border: '5px solid #DEA726',
+                boxShadow: '4px 4px 0px 3px #4A3520',
+              }}
+            >
+              <div
+                data-nautilus-embed="form"
+                data-src="/c/form/150e08b3-48fb-47d3-887c-0fb615de5c5c"
+              />
+            </div>
           </div>
         </div>
       </section>

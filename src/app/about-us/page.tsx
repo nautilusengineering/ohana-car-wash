@@ -73,6 +73,8 @@ export default function AboutPage() {
 
       {/* Story Section - clean white with bubbles */}
       <section className="relative py-16 md:py-24 overflow-hidden">
+        <img src="/hibiscus.png" alt="" className="absolute top-16 -left-10 w-44 md:w-56 opacity-[0.05] pointer-events-none -rotate-12" />
+        <img src="/corner-hibiscus-br.png" alt="" className="absolute bottom-10 -right-4 w-24 md:w-32 opacity-[0.08] pointer-events-none rotate-6" />
         {/* Floating bubbles */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="bubble" style={{ left: '5%', width: 14, height: 14, animationDuration: '8s', animationDelay: '0s' }} />
@@ -108,6 +110,7 @@ export default function AboutPage() {
       {/* Core Values - teal section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[#4AA2B9]" />
+        <img src="/hibiscus.png" alt="" className="absolute top-12 -right-10 w-48 md:w-60 opacity-[0.07] pointer-events-none rotate-[18deg]" style={{ filter: 'brightness(0) invert(1)' }} />
         <div
           className="absolute inset-0 opacity-15"
           style={{

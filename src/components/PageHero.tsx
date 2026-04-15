@@ -50,11 +50,7 @@ export default function PageHero({ title, subtitle, waveColor = "white" }: { tit
       {/* Content - positioned higher */}
       <div className="relative z-10 container mx-auto px-4 text-center -mt-4 md:-mt-12">
         {subtitle && (
-          <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
-            <HibiscusFlower className="w-6 h-6 -rotate-12" white />
-            <p className="font-script text-[#F7D711] text-xl md:text-2xl">{subtitle}</p>
-            <HibiscusFlower className="w-6 h-6 rotate-12" white />
-          </div>
+          <p className="font-script text-[#F7D711] text-xl md:text-2xl mb-2 md:mb-3">{subtitle}</p>
         )}
         <h1 className="text-3xl md:text-6xl font-display font-extrabold text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
           {title}

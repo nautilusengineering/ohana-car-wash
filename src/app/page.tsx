@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import IframeDrawer from "@/components/IframeDrawer";
+import useNautilusEmbed from "@/hooks/useNautilusEmbed";
 
 // Classic Hawaiian hibiscus using actual image
 function HibiscusFlower({ className = "", white = false }: { className?: string; white?: boolean }) {
@@ -293,7 +294,10 @@ function PerksSection() {
   ];
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
+      {/* Background hibiscus shadows */}
+      <img src="/hibiscus.png" alt="" className="absolute top-8 -right-12 w-48 md:w-60 opacity-[0.04] pointer-events-none rotate-[18deg]" />
+      <img src="/corner-hibiscus-tl.png" alt="" className="absolute bottom-10 -left-6 w-28 md:w-36 opacity-[0.08] pointer-events-none -rotate-6" />
       {/* Seamless sand continuation from hero */}
       <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-white via-[#F5F0E8] to-[#EDE5D8]" />
       {/* Sand grain texture */}
@@ -311,11 +315,7 @@ function PerksSection() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-14">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <HibiscusFlower className="w-7 h-7 -rotate-12" />
-            <p className="font-script text-[#F7D711] text-2xl">Every Visit</p>
-            <HibiscusFlower className="w-7 h-7 rotate-12" />
-          </div>
+          <p className="font-script text-[#F7D711] text-2xl mb-2">Every Visit</p>
           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-stroke-heading mb-4">
             Enjoy Extra Perks!
           </h2>
@@ -325,17 +325,35 @@ function PerksSection() {
         </div>
 
         {/* Perks Grid */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {perks.map((perk) => (
-            <WoodBoardCard key={perk.title}>
-              <div className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-[#C9982E] rounded-xl flex items-center justify-center text-white shadow-md">
-                  {perk.icon}
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto items-stretch">
+          {perks.map((perk, i) => (
+            <div key={perk.title} className="relative overflow-visible h-full">
+              {/* Colorful hibiscus corner — top-left on first card */}
+              {i === 0 && (
+                <img
+                  src="/corner-hibiscus-tl.png"
+                  alt=""
+                  className="absolute -top-4 -left-3 z-20 w-14 md:w-18 pointer-events-none"
+                />
+              )}
+              {/* Colorful hibiscus corner — bottom-right on last card */}
+              {i === perks.length - 1 && (
+                <img
+                  src="/corner-hibiscus-br.png"
+                  alt=""
+                  className="absolute -bottom-4 -right-3 z-20 w-14 md:w-18 pointer-events-none"
+                />
+              )}
+              <WoodBoardCard className="h-full">
+                <div className="p-6 text-center h-full flex flex-col justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-[#C9982E] rounded-xl flex items-center justify-center text-white shadow-md">
+                    {perk.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-[#4A3520] mb-2">{perk.title}</h3>
+                  <p className="text-sm text-[#5C4428]">{perk.description}</p>
                 </div>
-                <h3 className="text-lg font-bold text-[#4A3520] mb-2">{perk.title}</h3>
-                <p className="text-sm text-[#5C4428]">{perk.description}</p>
-              </div>
-            </WoodBoardCard>
+              </WoodBoardCard>
+            </div>
           ))}
         </div>
       </div>
@@ -379,7 +397,7 @@ function WashPackagesSection() {
       firstMonth: 9.99,
       features: ["Triple Foam", "Hot Wax", "Sealer Wax", "Tire Shine"],
       icon: "/island-shine.png",
-      chip: "BEST VALUE",
+      chip: null,
       chipColor: "bg-[#85CBE0]",
       chipBorder: "#2A6E85",
       chipText: "#1B5668",
@@ -394,7 +412,7 @@ function WashPackagesSection() {
       firstMonth: 9.99,
       features: ["Rain Repel", "Wheel Cleaner", "Spot Free Rinse", "Air Dry"],
       icon: "/tropical-breeze.png",
-      chip: "MOST POPULAR",
+      chip: null,
       chipColor: "bg-[#F0CD50]",
       chipBorder: "#A07818",
       chipText: "#6B4F10",
@@ -419,15 +437,13 @@ function WashPackagesSection() {
   ];
 
   return (
-    <section id="packages" className="py-12 md:py-20 bg-gradient-to-b from-[#EDE5D8] via-[#E8DFD0] to-[#EDE5D8]">
+    <section id="packages" className="py-12 md:py-20 bg-gradient-to-b from-[#EDE5D8] via-[#E8DFD0] to-[#EDE5D8] relative overflow-hidden">
+      <img src="/hibiscus.png" alt="" className="absolute top-20 -right-10 w-44 md:w-60 opacity-[0.05] pointer-events-none rotate-[20deg]" />
+      <img src="/corner-hibiscus-tl.png" alt="" className="absolute bottom-20 -left-6 w-24 md:w-32 opacity-[0.08] pointer-events-none -rotate-12" />
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <HibiscusFlower className="w-7 h-7 -rotate-12" />
-            <p className="font-script text-[#F7D711] text-2xl">Find Your Wave</p>
-            <HibiscusFlower className="w-7 h-7 rotate-12" />
-          </div>
+          <p className="font-script text-[#F7D711] text-2xl mb-2">Find Your Wave</p>
           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-stroke-heading mb-4">
             Ohana Washes
           </h2>
@@ -541,19 +557,21 @@ function WashPackagesSection() {
                       ))}
                     </ul>
 
-                    {/* CTA */}
-                    <button
-                      type="button"
-                      onClick={() => openPurchaseDrawer(pkg.productId)}
-                      className={`block w-full py-3 font-bold rounded-full text-center transition-all cursor-pointer ${
-                        pkg.premium
-                          ? 'bg-[#715924] text-[#f7d70e] hover:bg-[#f7d70e] hover:text-[#715924] premium-btn-hover-glow'
-                          : 'bg-[#f7d70e] text-[#715924] hover:bg-[#e5c60d] shadow-md'
-                      }`}
-                      style={pkg.premium ? { boxShadow: '3px 3px 0px 0px #715924' } : { boxShadow: '3px 3px 0px 0px #715924' }}
-                    >
-                      {isUnlimited ? 'Join Unlimited' : 'Get Started'}
-                    </button>
+                    {/* CTA - only show on unlimited */}
+                    {isUnlimited && (
+                      <button
+                        type="button"
+                        onClick={() => openPurchaseDrawer(pkg.productId)}
+                        className={`block w-full py-3 font-bold rounded-full text-center transition-all cursor-pointer ${
+                          pkg.premium
+                            ? 'bg-[#715924] text-[#f7d70e] hover:bg-[#f7d70e] hover:text-[#715924] premium-btn-hover-glow'
+                            : 'bg-[#f7d70e] text-[#715924] hover:bg-[#e5c60d] shadow-md'
+                        }`}
+                        style={{ boxShadow: '3px 3px 0px 0px #715924' }}
+                      >
+                        Join Unlimited
+                      </button>
+                    )}
                   </div>
                 </div>
               </WashWoodBoard>
@@ -593,6 +611,8 @@ function AboutSection() {
     <section className="relative py-14 md:py-24 overflow-hidden">
       {/* Ocean teal background - matches hero */}
       <div className="absolute inset-0 bg-[#4AA2B9]" />
+      <img src="/hibiscus.png" alt="" className="absolute top-10 -left-8 w-40 md:w-56 opacity-[0.08] pointer-events-none -rotate-12" style={{ filter: 'brightness(0) invert(1)' }} />
+      <img src="/corner-hibiscus-tl.png" alt="" className="absolute bottom-10 -right-4 w-24 md:w-32 opacity-[0.1] pointer-events-none rotate-[10deg]" style={{ filter: 'brightness(1.5) saturate(0.4)' }} />
       {/* Wave pattern overlay */}
       <div
         className="absolute inset-0 opacity-15"
@@ -606,11 +626,7 @@ function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left - Content */}
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <HibiscusFlower className="w-7 h-7 -rotate-12" white />
-              <p className="font-script text-[#f7d70e] text-2xl">Aloha!</p>
-              <HibiscusFlower className="w-7 h-7 rotate-12" white />
-            </div>
+            <p className="font-script text-[#f7d70e] text-2xl mb-2">Aloha!</p>
             <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-4 md:mb-6">
               About Ohana
             </h2>
@@ -676,17 +692,15 @@ function LocationSection() {
     <section id="location" className="relative py-14 md:py-24 overflow-hidden">
       {/* Dark brown background */}
       <div className="absolute inset-0 bg-[#4A3520]" />
+      <img src="/hibiscus.png" alt="" className="absolute bottom-10 -left-10 w-36 md:w-48 opacity-[0.05] pointer-events-none -rotate-[20deg]" style={{ filter: 'brightness(0) invert(1)' }} />
+      <img src="/corner-hibiscus-br.png" alt="" className="absolute top-10 -right-4 w-20 md:w-28 opacity-[0.1] pointer-events-none -rotate-6" style={{ filter: 'brightness(1.5) saturate(0.4)' }} />
       {/* Subtle hawaiian pattern */}
       <div className="absolute inset-0 hawaiian-bg opacity-[0.06]" />
 
       <div className="relative z-10 container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8 md:mb-16">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <HibiscusFlower className="w-7 h-7 -rotate-12" white />
-            <p className="font-script text-[#f7d70e] text-2xl">Come Visit!</p>
-            <HibiscusFlower className="w-7 h-7 rotate-12" white />
-          </div>
+          <p className="font-script text-[#f7d70e] text-2xl mb-2">Come Visit!</p>
           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-4">
             Find Us in Monroe
           </h2>
@@ -780,40 +794,32 @@ function LocationSection() {
 // Contact Section
 function ContactSection() {
   return (
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white relative overflow-hidden">
+      <img src="/hibiscus.png" alt="" className="absolute bottom-8 -right-10 w-44 md:w-56 opacity-[0.04] pointer-events-none rotate-[30deg]" />
+      <img src="/corner-hibiscus-tl.png" alt="" className="absolute top-8 -left-4 w-24 md:w-32 opacity-[0.07] pointer-events-none -rotate-6" />
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <HibiscusFlower className="w-7 h-7 -rotate-12" />
-              <p className="font-script text-[#F7D711] text-2xl">Get in Touch</p>
-              <HibiscusFlower className="w-7 h-7 rotate-12" />
-            </div>
+            <p className="font-script text-[#F7D711] text-2xl mb-3">Get in Touch</p>
             <h2 className="text-3xl md:text-5xl font-display font-extrabold text-[#715924]">
               Contact Us
             </h2>
           </div>
 
           <div className="max-w-lg mx-auto">
-            <WoodBoardCard>
-              <form className="p-6 space-y-4">
-                <div>
-                  <label htmlFor="contact-name" className="block font-display font-bold text-[#715924] mb-1 text-sm">Name</label>
-                  <input type="text" id="contact-name" className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] placeholder-[#715924]/40 focus:outline-none focus:ring-2 focus:ring-[#C9982E]" placeholder="Your name" />
-                </div>
-                <div>
-                  <label htmlFor="contact-email" className="block font-display font-bold text-[#715924] mb-1 text-sm">Email</label>
-                  <input type="email" id="contact-email" className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] placeholder-[#715924]/40 focus:outline-none focus:ring-2 focus:ring-[#C9982E]" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label htmlFor="contact-message" className="block font-display font-bold text-[#715924] mb-1 text-sm">Message</label>
-                  <textarea id="contact-message" rows={4} className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] placeholder-[#715924]/40 focus:outline-none focus:ring-2 focus:ring-[#C9982E] resize-none" placeholder="How can we help?" />
-                </div>
-                <button type="submit" className="w-full font-display px-8 py-3 bg-[#f7d70e] text-[#715924] font-extrabold rounded-lg hover:bg-[#e5c60d] transition-all border-2 border-[#715924] text-lg" style={{ boxShadow: '3px 3px 0px 0px #715924' }}>
-                  Send Message
-                </button>
-              </form>
-            </WoodBoardCard>
+            <div
+              className="rounded-xl p-4 md:p-6"
+              style={{
+                background: '#715924',
+                border: '5px solid #DEA726',
+                boxShadow: '4px 4px 0px 3px #4A3520',
+              }}
+            >
+              <div
+                data-nautilus-embed="form"
+                data-src="/c/form/7a8b8fae-eb57-4aec-b8ae-da00b44a6af4"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -823,6 +829,8 @@ function ContactSection() {
 
 // Main Page
 export default function Home() {
+  useNautilusEmbed();
+
   return (
     <main className="min-h-screen">
       <Navigation />

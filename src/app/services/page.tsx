@@ -3,17 +3,21 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import WoodBoardCard from "@/components/WoodBoardCard";
+import useNautilusEmbed from "@/hooks/useNautilusEmbed";
 
 export default function ServicesPage() {
+  useNautilusEmbed();
   return (
     <main className="min-h-screen">
       <Navigation />
       <PageHero title="Fleet & Family" subtitle="Business & Family Plans" />
 
       {/* Benefits - white */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        {/* Shadow hibiscus flowers */}
+        <img src="/hibiscus.png" alt="" className="absolute top-10 -left-10 w-48 md:w-64 opacity-[0.06] pointer-events-none -rotate-12" />
+        <img src="/corner-hibiscus-br.png" alt="" className="absolute bottom-16 -right-6 w-24 md:w-32 opacity-[0.08] pointer-events-none rotate-12" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-14">
             <p className="font-script text-[#F7D711] text-2xl mb-3">Why Choose Us</p>
             <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#715924]">
@@ -64,57 +68,19 @@ export default function ServicesPage() {
               </h2>
             </div>
 
-            <WoodBoardCard>
-              <form className="p-6 md:p-8 space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block font-display font-bold text-[#715924] mb-1 text-sm">Name</label>
-                    <input type="text" id="name" className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] placeholder-[#715924]/40 focus:outline-none focus:ring-2 focus:ring-[#C9982E]" placeholder="Your name" />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block font-display font-bold text-[#715924] mb-1 text-sm">Email</label>
-                    <input type="email" id="email" className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] placeholder-[#715924]/40 focus:outline-none focus:ring-2 focus:ring-[#C9982E]" placeholder="your@email.com" />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="phone" className="block font-display font-bold text-[#715924] mb-1 text-sm">Phone</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] placeholder-[#715924]/40 focus:outline-none focus:ring-2 focus:ring-[#C9982E]" placeholder="(555) 123-4567" />
-                  </div>
-                  <div>
-                    <label htmlFor="organization" className="block font-display font-bold text-[#715924] mb-1 text-sm">Organization</label>
-                    <input type="text" id="organization" className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] placeholder-[#715924]/40 focus:outline-none focus:ring-2 focus:ring-[#C9982E]" placeholder="Company name" />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="fleet-type" className="block font-display font-bold text-[#715924] mb-1 text-sm">Type of Fleet</label>
-                    <select id="fleet-type" className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] focus:outline-none focus:ring-2 focus:ring-[#C9982E]">
-                      <option value="">Select type...</option>
-                      <option value="auto-sales">Auto Sales</option>
-                      <option value="vehicle-rentals">Vehicle Rentals</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="vehicle-count" className="block font-display font-bold text-[#715924] mb-1 text-sm">Number of Vehicles</label>
-                    <select id="vehicle-count" className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] focus:outline-none focus:ring-2 focus:ring-[#C9982E]">
-                      <option value="">Select range...</option>
-                      <option value="1-50">1-50</option>
-                      <option value="51-100">51-100</option>
-                      <option value="100+">100+</option>
-                    </select>
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="fleet-details" className="block font-display font-bold text-[#715924] mb-1 text-sm">Tell us about your Fleet (Optional)</label>
-                  <textarea id="fleet-details" rows={3} className="w-full px-4 py-3 rounded-lg border-2 border-[#DEA726] bg-white/80 text-[#715924] placeholder-[#715924]/40 focus:outline-none focus:ring-2 focus:ring-[#C9982E] resize-none" placeholder="Any additional details..." />
-                </div>
-                <button type="submit" className="w-full font-display px-8 py-3 bg-[#f7d70e] text-[#715924] font-extrabold rounded-lg hover:bg-[#e5c60d] transition-all border-2 border-[#715924] text-lg" style={{ boxShadow: '3px 3px 0px 0px #715924' }}>
-                  Submit Inquiry
-                </button>
-              </form>
-            </WoodBoardCard>
+            <div
+              className="rounded-xl p-4 md:p-6"
+              style={{
+                background: '#715924',
+                border: '5px solid #DEA726',
+                boxShadow: '4px 4px 0px 3px #4A3520',
+              }}
+            >
+              <div
+                data-nautilus-embed="form"
+                data-src="/c/form/918e2a3b-db0c-452e-b4d3-9f69c774c699"
+              />
+            </div>
           </div>
         </div>
       </section>

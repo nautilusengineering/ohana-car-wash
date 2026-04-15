@@ -3,17 +3,21 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import WoodBoardCard from "@/components/WoodBoardCard";
+import useNautilusEmbed from "@/hooks/useNautilusEmbed";
 
 export default function FundraisingPage() {
+  useNautilusEmbed();
   return (
     <main className="min-h-screen">
       <Navigation />
       <PageHero title="Fundraising" subtitle="Community" />
 
       {/* How it Works - white */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        {/* Shadow hibiscus flowers */}
+        <img src="/hibiscus.png" alt="" className="absolute bottom-20 -left-10 w-40 md:w-56 opacity-[0.05] pointer-events-none -rotate-[15deg]" />
+        <img src="/corner-hibiscus-br.png" alt="" className="absolute top-16 -right-4 w-24 md:w-32 opacity-[0.08] pointer-events-none -rotate-6" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-14">
             <p className="font-script text-[#F7D711] text-2xl mb-3">How It Works</p>
             <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#715924]">
@@ -77,35 +81,19 @@ export default function FundraisingPage() {
               </h2>
             </div>
 
-            <form className="bg-white/10 rounded-2xl p-6 md:p-8 space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="fund-name" className="block font-display font-bold text-white mb-1 text-sm">Name</label>
-                  <input type="text" id="fund-name" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="Your name" />
-                </div>
-                <div>
-                  <label htmlFor="fund-org" className="block font-display font-bold text-white mb-1 text-sm">Organization</label>
-                  <input type="text" id="fund-org" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="Organization name" />
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="fund-email" className="block font-display font-bold text-white mb-1 text-sm">Email</label>
-                  <input type="email" id="fund-email" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label htmlFor="fund-phone" className="block font-display font-bold text-white mb-1 text-sm">Phone</label>
-                  <input type="tel" id="fund-phone" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711]" placeholder="(555) 123-4567" />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="fund-campaign" className="block font-display font-bold text-white mb-1 text-sm">Tell us about your campaign</label>
-                <textarea id="fund-campaign" rows={4} className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#F7D711] resize-none" placeholder="Describe your fundraising goals..." />
-              </div>
-              <button type="submit" className="w-full font-display px-8 py-3 bg-[#F7D711] text-[#715924] font-extrabold rounded-lg hover:bg-[#e5c60d] transition-all border-2 border-[#715924] text-lg" style={{ boxShadow: '3px 3px 0px 0px #715924' }}>
-                Submit
-              </button>
-            </form>
+            <div
+              className="rounded-xl p-4 md:p-6"
+              style={{
+                background: '#715924',
+                border: '5px solid #DEA726',
+                boxShadow: '4px 4px 0px 3px #4A3520',
+              }}
+            >
+              <div
+                data-nautilus-embed="form"
+                data-src="/c/form/d2ff38a5-b340-4b90-b591-3e43e02a5760"
+              />
+            </div>
           </div>
         </div>
       </section>
