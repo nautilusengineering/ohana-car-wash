@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export default function useNautilusEmbed() {
   useEffect(() => {
-    (window as Record<string, unknown>).NautilusEmbedConfig = {
+    (window as unknown as Record<string, unknown>).NautilusEmbedConfig = {
       baseUrl: "https://nautilus-app.com",
       license: "12ajjdewwwy-26rnhw2943-1s7g1u8ma0i",
     };
