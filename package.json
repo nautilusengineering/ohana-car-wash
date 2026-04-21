@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--no-webstorage' next dev -H 0.0.0.0 --turbopack",
+    "dev": "NODE_OPTIONS='--no-experimental-webstorage' next dev -H 0.0.0.0 --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "bunx tsc --noEmit && next lint",

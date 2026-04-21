@@ -8,29 +8,37 @@ const LOCATION_ID = '87b6929d-c94a-44d1-99cd-e1717ff8e1ca';
 interface IframeDrawerProps {
   onClose: () => void;
   productId?: string;
+  embedUrl?: string;
   title?: string;
 }
 
-export default function IframeDrawer({ onClose, productId, title = "Checkout" }: IframeDrawerProps) {
+export default function IframeDrawer({ onClose, productId, embedUrl: customUrl, title = "Checkout" }: IframeDrawerProps) {
   const [isClosing, setIsClosing] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
   const [viewportHeight, setViewportHeight] = useState(0);
 
-  const embedUrl = `https://www.nautilus-app.com/c/storefront/ohana?locationId=${LOCATION_ID}${productId ? `&productId=${productId}` : ''}&embedded=true`;
+  const embedUrl = customUrl ?? `https://www.nautilus-app.com/c/storefront/ohana?locationId=${LOCATION_ID}${productId ? `&productId=${productId}` : ''}&embedded=true`;
 
   const handleClose = () => {
     setIsClosing(true);
-    setTimeout(() => {
-      document.body.style.overflow = '';
-    }, ANIMATION_DURATION - 100);
     setTimeout(() => onClose(), ANIMATION_DURATION);
   };
 
   useEffect(() => {
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
     document.body.style.overflow = 'hidden';
     return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
     };
   }, []);
 
@@ -84,11 +92,11 @@ export default function IframeDrawer({ onClose, productId, title = "Checkout" }:
         onClick={handleClose}
       />
 
-      <div className="fixed inset-0 z-[52]" onClick={handleClose}>
+      <div className="fixed inset-0 z-[52] overscroll-none" onClick={handleClose}>
         <div
-          className={`ml-auto h-full w-full md:max-w-[500px] bg-white flex flex-col drawer-content ${!isClosing ? 'open' : ''}`}
+          className={`ml-auto h-full w-full md:max-w-[500px] bg-white flex flex-col drawer-content overscroll-none ${!isClosing ? 'open' : ''}`}
           onClick={(e) => e.stopPropagation()}
-          style={{ height: isKeyboardVisible ? `${viewportHeight}px` : '100%' }}
+          style={{ height: isKeyboardVisible ? `${viewportHeight}px` : '100%', touchAction: 'none' }}
         >
           <div
             className="px-4 py-3 border-b border-gray-200 flex justify-between items-center flex-shrink-0"
@@ -107,7 +115,7 @@ export default function IframeDrawer({ onClose, productId, title = "Checkout" }:
             </button>
           </div>
 
-          <div className="flex-1 relative overflow-hidden payment-drawer-mobile">
+          <div className="flex-1 relative overflow-hidden payment-drawer-mobile overscroll-contain" style={{ touchAction: 'auto' }}>
             <iframe
               src={embedUrl}
               className="w-full h-full border-0"

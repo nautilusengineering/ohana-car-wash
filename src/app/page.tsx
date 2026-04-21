@@ -109,7 +109,7 @@ function HeroSection() {
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold uppercase text-outline-brown tracking-tight">
                 Aloha, Ohana!
               </h1>
-              <p className="text-base md:text-xl text-[#715924]/80 max-w-xl leading-relaxed">
+              <p className="text-base md:text-xl text-white/90 max-w-xl leading-relaxed">
                 Where every wash is a splash of paradise! Join Ohana Unlimited in Monroe, OH and start saving time and money on every car wash.
               </p>
             </div>
@@ -380,7 +380,8 @@ function WashPackagesSection() {
       singlePrice: 25,
       monthlyPrice: 39.99,
       firstMonth: 9.99,
-      features: ["Graphene Xtreme", "Ceramic X3", "Rain Repel", "Triple Foam", "Hot Wax", "Sealer Wax", "Tire Shine", "Wheel Cleaner", "All Lower Tier Features"],
+      features: ["Graphene Xtreme", "Ceramic X3"],
+      includesFrom: "Island Shine",
       icon: "/big-kahuna.png",
       chip: "PREMIUM",
       chipColor: "bg-[#F7D711]",
@@ -396,6 +397,7 @@ function WashPackagesSection() {
       monthlyPrice: 34.99,
       firstMonth: 9.99,
       features: ["Triple Foam", "Hot Wax", "Sealer Wax", "Tire Shine"],
+      includesFrom: "Tropical Breeze",
       icon: "/island-shine.png",
       chip: null,
       chipColor: "bg-[#85CBE0]",
@@ -411,6 +413,7 @@ function WashPackagesSection() {
       monthlyPrice: 29.99,
       firstMonth: 9.99,
       features: ["Rain Repel", "Wheel Cleaner", "Spot Free Rinse", "Air Dry"],
+      includesFrom: "Splash & Dash",
       icon: "/tropical-breeze.png",
       chip: null,
       chipColor: "bg-[#F0CD50]",
@@ -426,6 +429,7 @@ function WashPackagesSection() {
       monthlyPrice: 24.99,
       firstMonth: 9.99,
       features: ["Wash", "Rinse", "Dry", "Basic Clean"],
+      includesFrom: null,
       icon: "/splash-dash.png",
       chip: null,
       chipColor: "",
@@ -504,7 +508,7 @@ function WashPackagesSection() {
                   <div className="h-[170px] flex flex-col items-center justify-end">
                     {/* Icon on wood */}
                     <div className="flex justify-center mb-3">
-                      <Image src={pkg.icon} alt={pkg.name} width={120} height={120} className="w-24 h-24 drop-shadow-lg" />
+                      <Image src={pkg.icon} alt={pkg.name} width={120} height={120} className="w-32 h-32 object-contain drop-shadow-lg" />
                     </div>
 
                     {/* Package Name on wood - blue outline */}
@@ -542,6 +546,14 @@ function WashPackagesSection() {
 
                     {/* Features */}
                     <ul className="space-y-1.5 mb-4 flex-1">
+                      {pkg.includesFrom && (
+                        <li className="flex items-center gap-2 text-xs font-semibold text-[#4AA2B9] pb-2 border-b border-[#715924]/10 mb-2">
+                          <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          </svg>
+                          Everything in {pkg.includesFrom}
+                        </li>
+                      )}
                       {pkg.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-2 text-sm text-[#4A3520]">
                           <svg className="w-4 h-4 flex-shrink-0 text-[#DEA726]" fill="currentColor" viewBox="0 0 20 20">
@@ -682,6 +694,76 @@ function AboutSection() {
           </div>
         </div>
       </div>
+    </section>
+  );
+}
+
+// Gift Card Section
+function GiftCardSection() {
+  const [showDrawer, setShowDrawer] = useState(false);
+
+  return (
+    <section className="py-12 md:py-20 bg-gradient-to-b from-[#EDE5D8] via-[#F5F0E8] to-[#EDE5D8] relative overflow-hidden">
+      <img src="/hibiscus.png" alt="" className="absolute top-10 -right-8 w-36 md:w-48 opacity-[0.05] pointer-events-none rotate-[15deg]" />
+      <img src="/corner-hibiscus-tl.png" alt="" className="absolute bottom-8 -left-4 w-20 md:w-28 opacity-[0.08] pointer-events-none -rotate-6" />
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div
+            className="relative overflow-hidden rounded-2xl p-8 md:p-12"
+            style={{
+              background: '#FBF7C6',
+              border: '5px solid #DEA726',
+              boxShadow: '4px 4px 0px 3px #715924',
+            }}
+          >
+            {/* Hawaiian pattern overlay */}
+            <div className="absolute inset-0 hawaiian-bg opacity-[0.12]" />
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+              {/* Turtle */}
+              <div className="shrink-0">
+                <Image
+                  src="/turtle.png"
+                  alt="Ohana Turtle"
+                  width={180}
+                  height={180}
+                  className="w-32 h-32 md:w-44 md:h-44 object-contain drop-shadow-lg"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="text-center md:text-left flex-1">
+                <p className="font-script text-[#C9982E] text-xl mb-1">Share the Aloha</p>
+                <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#715924] mb-3">
+                  Gift Cards
+                </h2>
+                <p className="text-[#5C4428] text-base md:text-lg mb-6 max-w-lg">
+                  Give the gift of a sparkling clean ride! Ohana Car Wash gift cards are the perfect present for friends, family, or anyone who deserves a little paradise.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setShowDrawer(true)}
+                  className="inline-flex items-center gap-2 font-display px-8 py-3 bg-[#715924] text-[#f7d70e] font-extrabold rounded-lg hover:bg-[#5A4720] transition-all border-2 border-[#715924] cursor-pointer"
+                  style={{ boxShadow: '3px 3px 0px 0px #4A3520' }}
+                >
+                  Purchase a Gift Card
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {showDrawer && (
+        <IframeDrawer
+          onClose={() => setShowDrawer(false)}
+          productId="4dbf336e-a114-4804-ac1d-c761a5222b6c"
+          title="Purchase a Gift Card"
+        />
+      )}
     </section>
   );
 }
@@ -838,6 +920,7 @@ export default function Home() {
       <PerksSection />
       <WashPackagesSection />
       <AboutSection />
+      <GiftCardSection />
       <LocationSection />
       <ContactSection />
       <Footer />
