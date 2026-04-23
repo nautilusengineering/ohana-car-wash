@@ -37,6 +37,7 @@ const colors = {
 
 // Hero Section with Teal Ocean Waves and White Foam Transition
 function HeroSection() {
+  const [showDrawer, setShowDrawer] = useState(false);
   return (
     <section className="relative min-h-[80vh] md:min-h-[95vh] flex items-center overflow-hidden">
       {/* Teal ocean background matching original site */}
@@ -127,17 +128,16 @@ function HeroSection() {
                 </svg>
                 Directions
               </a>
-              <a
-                href="https://ohanacarwash.mywashaccount.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 sm:px-7 py-3 sm:py-3.5 bg-[#C9982E] text-white font-semibold rounded-full hover:bg-[#715924] hover:text-white transition-all shadow-lg hover:shadow-xl"
+              <button
+                type="button"
+                onClick={() => setShowDrawer(true)}
+                className="inline-flex items-center justify-center px-5 sm:px-7 py-3 sm:py-3.5 bg-[#C9982E] text-white font-semibold rounded-full hover:bg-[#715924] hover:text-white transition-all shadow-lg hover:shadow-xl cursor-pointer"
               >
                 Join Unlimited
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -155,6 +155,13 @@ function HeroSection() {
           </div>
         </div>
       </div>
+
+      {showDrawer && (
+        <IframeDrawer
+          onClose={() => setShowDrawer(false)}
+          title="Join Ohana Unlimited"
+        />
+      )}
     </section>
   );
 }
