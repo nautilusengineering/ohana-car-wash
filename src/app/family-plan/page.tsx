@@ -3,10 +3,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import useNautilusEmbed from "@/hooks/useNautilusEmbed";
 
 export default function FamilyPlanPage() {
-  useNautilusEmbed();
 
   return (
     <main className="min-h-screen">
@@ -90,7 +88,7 @@ export default function FamilyPlanPage() {
         </div>
       </section>
 
-      {/* Family Plan Form - white */}
+      {/* How to Add Vehicles - white */}
       <section className="py-20 relative overflow-hidden">
         <img src="/hibiscus.png" alt="" className="absolute top-10 -left-8 w-40 md:w-56 opacity-[0.06] pointer-events-none -rotate-12" />
         <img src="/corner-hibiscus-br.png" alt="" className="absolute bottom-10 -right-4 w-24 md:w-32 opacity-[0.08] pointer-events-none rotate-6" />
@@ -99,22 +97,57 @@ export default function FamilyPlanPage() {
             <div className="text-center mb-10">
               <p className="font-script text-[#F7D711] text-2xl mb-3">Get Started</p>
               <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#715924]">
-                Family Plan Inquiry
+                Add a Vehicle to Your Plan
               </h2>
+              <p className="text-[#715924]/70 mt-4 text-lg">
+                Already a member? Adding family vehicles is easy — just log into your membership portal.
+              </p>
             </div>
 
             <div
-              className="rounded-xl p-4 md:p-6"
+              className="rounded-xl p-6 md:p-8"
               style={{
                 background: '#715924',
                 border: '5px solid #DEA726',
                 boxShadow: '4px 4px 0px 3px #4A3520',
               }}
             >
-              <div
-                data-nautilus-embed="form"
-                data-src="/c/form/918e2a3b-db0c-452e-b4d3-9f69c774c699"
-              />
+              <ol className="space-y-6 text-white">
+                <li className="flex gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 bg-[#F7D711] rounded-full flex items-center justify-center text-[#715924] font-display font-extrabold text-lg" style={{ border: '3px solid #4A3520' }}>1</span>
+                  <div>
+                    <h3 className="font-display font-extrabold text-lg mb-1">Log Into the Membership Portal</h3>
+                    <p className="text-white/80">Visit the membership portal and sign in with your existing account.</p>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 bg-[#F7D711] rounded-full flex items-center justify-center text-[#715924] font-display font-extrabold text-lg" style={{ border: '3px solid #4A3520' }}>2</span>
+                  <div>
+                    <h3 className="font-display font-extrabold text-lg mb-1">Go to Manage Membership</h3>
+                    <p className="text-white/80">From your dashboard, select <strong>&quot;Manage Membership&quot;</strong> to view your current plan.</p>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 bg-[#F7D711] rounded-full flex items-center justify-center text-[#715924] font-display font-extrabold text-lg" style={{ border: '3px solid #4A3520' }}>3</span>
+                  <div>
+                    <h3 className="font-display font-extrabold text-lg mb-1">Add an Additional Vehicle</h3>
+                    <p className="text-white/80">Click <strong>&quot;Add Vehicle&quot;</strong> and enter the details for your family member&apos;s car. The new vehicle will be added to the same plan as your original membership.</p>
+                  </div>
+                </li>
+              </ol>
+
+              <div className="mt-8 pt-6 border-t border-white/20 text-center">
+                <p className="text-white/70 text-sm mb-4">Note: All additional vehicles must be on the same plan as your current membership.</p>
+                <a
+                  href="https://www.nautilus-app.com/c/ohana/p/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block font-display px-8 py-3 bg-[#F7D711] text-[#715924] font-extrabold rounded-lg hover:bg-[#e5c60d] transition-all border-2 border-[#4A3520] text-lg"
+                  style={{ boxShadow: '3px 3px 0px 0px #4A3520' }}
+                >
+                  Log In to Membership Portal
+                </a>
+              </div>
             </div>
           </div>
         </div>
