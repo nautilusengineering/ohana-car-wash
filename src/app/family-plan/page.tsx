@@ -86,21 +86,21 @@ export default function FamilyPlanPage() {
                 <li className="flex gap-4">
                   <span className="flex-shrink-0 w-10 h-10 bg-[#F7D711] rounded-full flex items-center justify-center text-[#715924] font-display font-extrabold text-lg" style={{ border: '3px solid #4A3520' }}>1</span>
                   <div>
-                    <h3 className="font-display font-extrabold text-lg mb-1">Log Into the Membership Portal</h3>
+                    <h3 className="font-display font-extrabold text-lg mb-1" style={{ color: '#FFFDF0' }}>Log Into the Membership Portal</h3>
                     <p className="text-white/80">Visit the membership portal and sign in with your existing account.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <span className="flex-shrink-0 w-10 h-10 bg-[#F7D711] rounded-full flex items-center justify-center text-[#715924] font-display font-extrabold text-lg" style={{ border: '3px solid #4A3520' }}>2</span>
                   <div>
-                    <h3 className="font-display font-extrabold text-lg mb-1">Go to Manage Membership</h3>
+                    <h3 className="font-display font-extrabold text-lg mb-1" style={{ color: '#FFFDF0' }}>Go to Manage Membership</h3>
                     <p className="text-white/80">From your dashboard, select <strong>&quot;Manage Membership&quot;</strong> to view your current plan.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <span className="flex-shrink-0 w-10 h-10 bg-[#F7D711] rounded-full flex items-center justify-center text-[#715924] font-display font-extrabold text-lg" style={{ border: '3px solid #4A3520' }}>3</span>
                   <div>
-                    <h3 className="font-display font-extrabold text-lg mb-1">Add an Additional Vehicle</h3>
+                    <h3 className="font-display font-extrabold text-lg mb-1" style={{ color: '#FFFDF0' }}>Add an Additional Vehicle</h3>
                     <p className="text-white/80">Click <strong>&quot;Add Vehicle&quot;</strong> and enter the details for your family member&apos;s car. The new vehicle will be added to the same plan as your original membership.</p>
                   </div>
                 </li>
