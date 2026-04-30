@@ -68,9 +68,10 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-6">
               <Link href="/about-us" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>About Us</Link>
               <Link href="/services" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Fleet</Link>
+              <Link href="/family-plan" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Family Plan</Link>
               <Link href="/environment" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Environment</Link>
               <Link href="/fundraising" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Fundraising</Link>
               <Link href="/careers" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Careers</Link>
@@ -89,7 +90,7 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="md:hidden p-2"
+              className="lg:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <svg className="w-6 h-6 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,10 +105,11 @@ export default function Navigation() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-[#B08850]/30">
+            <div className="lg:hidden py-4 border-t border-[#B08850]/30">
               <div className="flex flex-col gap-3">
                 <Link href="/about-us" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>About Us</Link>
                 <Link href="/services" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Fleet</Link>
+                <Link href="/family-plan" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Family Plan</Link>
                 <Link href="/environment" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Environment</Link>
                 <Link href="/fundraising" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Fundraising</Link>
                 <Link href="/careers" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Careers</Link>
