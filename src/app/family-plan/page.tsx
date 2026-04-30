@@ -56,50 +56,20 @@ export default function FamilyPlanPage() {
         </div>
       </section>
 
-      {/* How It Works - teal */}
+      {/* Get Started - teal */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[#4AA2B9]" />
         <img src="/hibiscus.png" alt="" className="absolute top-10 -right-10 w-48 md:w-60 opacity-[0.06] pointer-events-none rotate-[18deg]" style={{ filter: 'brightness(0) invert(1)' }} />
         <img src="/corner-hibiscus-tl.png" alt="" className="absolute bottom-10 -left-4 w-24 md:w-32 opacity-[0.08] pointer-events-none -rotate-6" style={{ filter: 'brightness(1.5) saturate(0.4)' }} />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-14">
-            <p className="font-script text-[#F7D711] text-2xl mb-3">How It Works</p>
-            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
-              Simple for the Whole Family
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { num: "1", title: "Choose Each Plan", desc: "Choose your plan for each vehicle." },
-              { num: "2", title: "Add Your Vehicles", desc: "Add vehicles to your family account." },
-              { num: "3", title: "Enjoy Unlimited Washes", desc: "Enjoy unlimited washes for the whole family." },
-            ].map((step) => (
-              <div key={step.num} className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-[#F7D711] rounded-full flex items-center justify-center text-[#715924] text-2xl font-display font-extrabold" style={{ border: '4px solid #715924' }}>
-                  {step.num}
-                </div>
-                <h3 className="text-xl font-display font-extrabold text-white mb-2" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.18)' }}>{step.title}</h3>
-                <p className="text-white/85">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How to Add Vehicles - white */}
-      <section className="py-20 relative overflow-hidden">
-        <img src="/hibiscus.png" alt="" className="absolute top-10 -left-8 w-40 md:w-56 opacity-[0.06] pointer-events-none -rotate-12" />
-        <img src="/corner-hibiscus-br.png" alt="" className="absolute bottom-10 -right-4 w-24 md:w-32 opacity-[0.08] pointer-events-none rotate-6" />
-        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-10">
               <p className="font-script text-[#F7D711] text-2xl mb-3">Get Started</p>
-              <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#715924]">
+              <h2 className="text-3xl md:text-4xl font-display font-extrabold text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
                 Add a Vehicle to Your Plan
               </h2>
-              <p className="text-[#715924]/70 mt-4 text-lg">
+              <p className="text-white/90 mt-4 text-lg">
                 Already a member? Adding family vehicles is easy — just log into your membership portal.
               </p>
             </div>
