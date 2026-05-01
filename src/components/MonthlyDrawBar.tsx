@@ -82,7 +82,7 @@ function MonthlyDrawModal({ onClose }: { onClose: () => void }) {
         >
           <div className="px-5 py-3.5 border-b border-[#DEA726]/40 flex justify-between items-center">
             <div>
-              <h2 className="text-base font-bold text-[#f7d70e] leading-tight">Enter the Monthly Draw</h2>
+              <h2 className="text-base font-bold text-[#f7d70e] leading-tight">Enter the Monthly Draw!</h2>
               <p className="text-xs text-white/75 mt-0.5">Win One Free Month of Washes</p>
             </div>
             <button
@@ -137,7 +137,7 @@ export default function MonthlyDrawBar() {
             />
             <div className="min-w-0 hidden sm:block pr-2">
               <h3 className="text-[#715924] font-semibold text-sm leading-tight whitespace-nowrap">
-                Enter the Monthly Draw
+                Enter the Monthly Draw!
               </h3>
               <p className="text-[#715924]/60 text-[11px] leading-tight whitespace-nowrap">
                 Win One Free Month of Washes
