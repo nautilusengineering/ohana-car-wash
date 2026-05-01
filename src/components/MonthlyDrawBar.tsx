@@ -118,22 +118,22 @@ export default function MonthlyDrawBar() {
   return (
     <>
       <div
-        className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 max-w-[calc(100vw-1rem)]"
+        className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-auto"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         <div
-          className="flex items-center gap-3 sm:gap-5 bg-white/95 backdrop-blur-md rounded-full pl-4 sm:pl-6 pr-2.5 py-2.5 shadow-lg border border-[#DEA726]/40"
+          className="flex items-center gap-2 sm:gap-5 bg-white/95 backdrop-blur-md rounded-full pl-3 sm:pl-6 pr-1.5 sm:pr-2.5 py-1.5 sm:py-2.5 shadow-lg border border-[#DEA726]/40"
           style={{ boxShadow: '0 8px 24px rgba(113, 89, 36, 0.18)' }}
         >
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="flex items-center gap-3 sm:gap-4 min-w-0 text-left cursor-pointer group"
+            className="flex items-center gap-2 sm:gap-4 min-w-0 text-left cursor-pointer group"
           >
             <img
               src="/hibiscus.png"
               alt=""
-              className="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0 group-hover:scale-110 transition-transform"
+              className="w-7 h-7 sm:w-9 sm:h-9 object-contain flex-shrink-0 group-hover:scale-110 transition-transform"
             />
             <div className="min-w-0 hidden sm:block pr-2">
               <h3 className="text-[#715924] font-semibold text-sm leading-tight whitespace-nowrap">
@@ -143,30 +143,28 @@ export default function MonthlyDrawBar() {
                 Win One Free Month of Washes
               </p>
             </div>
-            <div className="min-w-0 sm:hidden pr-1">
-              <h3 className="text-[#715924] font-semibold text-xs leading-tight whitespace-nowrap">
+            <div className="min-w-0 sm:hidden">
+              <h3 className="text-[#715924] font-semibold text-[13px] leading-tight whitespace-nowrap">
                 Monthly Draw
               </h3>
-              <p className="text-[#715924]/60 text-[10px] leading-tight whitespace-nowrap">
-                Win a Free Month
-              </p>
             </div>
           </button>
 
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="inline-flex items-center justify-center px-4 sm:px-5 py-2 bg-[#DEA726] text-white font-semibold rounded-full hover:bg-[#715924] transition-colors text-xs whitespace-nowrap flex-shrink-0"
+            className="inline-flex items-center justify-center px-3 sm:px-5 py-1.5 sm:py-2 bg-[#DEA726] text-white font-semibold rounded-full hover:bg-[#715924] transition-colors text-[11px] sm:text-xs whitespace-nowrap flex-shrink-0"
           >
-            Enter Now
+            <span className="sm:hidden">Enter</span>
+            <span className="hidden sm:inline">Enter Now</span>
           </button>
           <button
             type="button"
             onClick={() => setIsDismissed(true)}
-            className="w-7 h-7 flex items-center justify-center rounded-full text-[#715924]/40 hover:bg-[#715924]/10 hover:text-[#715924] transition-colors flex-shrink-0"
+            className="w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center rounded-full text-[#715924]/40 hover:bg-[#715924]/10 hover:text-[#715924] transition-colors flex-shrink-0"
             aria-label="Dismiss"
           >
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" className="sm:w-[14px] sm:h-[14px]">
               <path
                 d="M15 5L5 15M5 5L15 15"
                 stroke="currentColor"
