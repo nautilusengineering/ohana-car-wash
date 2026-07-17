@@ -775,6 +775,73 @@ function GiftCardSection() {
   );
 }
 
+// Wash Books teaser — a glimpse of the "buy 4, get 2 free" packs (full details on /wash-books)
+function WashBooksTeaser() {
+  const books = [
+    { name: "Splash & Dash", price: 40, icon: "/splash-dash.png" },
+    { name: "Tropical Breeze", price: 60, icon: "/tropical-breeze.png" },
+    { name: "Island Shine", price: 80, icon: "/island-shine.png" },
+    { name: "The Big Kahuna", price: 100, icon: "/big-kahuna.png" },
+  ];
+
+  return (
+    <section className="relative py-14 md:py-20 overflow-hidden">
+      <div className="absolute inset-0 bg-[#4AA2B9]" />
+      <img src="/hibiscus.png" alt="" className="absolute top-10 -right-10 w-48 md:w-60 opacity-[0.06] pointer-events-none rotate-[18deg]" style={{ filter: 'brightness(0) invert(1)' }} />
+      <img src="/corner-hibiscus-tl.png" alt="" className="absolute bottom-10 -left-4 w-24 md:w-32 opacity-[0.08] pointer-events-none -rotate-6" style={{ filter: 'brightness(1.5) saturate(0.4)' }} />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <p className="font-script text-[#F7D711] text-2xl mb-2">No Membership? No Problem</p>
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-3" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
+            Buy 4, Get 2 Free
+          </h2>
+          <p className="text-white/90 text-lg">
+            Grab a prepaid wash book — pay for 4 washes, get 2 on us. Six washes total, no membership required.
+          </p>
+        </div>
+
+        {/* Glimpse of the four packs */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7 max-w-5xl mx-auto mb-12">
+          {books.map((b) => (
+            <div
+              key={b.name}
+              className="relative rounded-2xl p-6 pt-7 text-center"
+              style={{ background: '#FBF7C6', border: '5px solid #DEA726', boxShadow: '4px 4px 0px 3px #715924' }}
+            >
+              <span
+                className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#4AA2B9] text-white text-xs font-extrabold uppercase tracking-wide px-3.5 py-1 rounded-full whitespace-nowrap"
+                style={{ border: '2px solid #1B5668' }}
+              >
+                2 Free
+              </span>
+              <Image src={b.icon} alt={b.name} width={128} height={128} className="w-28 h-28 md:w-32 md:h-32 mx-auto object-contain drop-shadow mb-2" />
+              <h3 className="font-display font-extrabold text-[#715924] text-base md:text-lg leading-tight mb-1">{b.name}</h3>
+              <p className="font-bold text-[#4AA2B9] text-lg md:text-xl">
+                ${b.price}
+                <span className="text-sm text-[#715924]/60 font-medium"> / 6 washes</span>
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Link
+            href="/wash-books"
+            className="inline-flex items-center gap-2 font-display px-8 py-3 bg-[#f7d70e] text-[#715924] font-extrabold rounded-lg hover:bg-[#e5c60d] transition-all border-2 border-[#4A3520]"
+            style={{ boxShadow: '3px 3px 0px 0px #4A3520' }}
+          >
+            See Wash Books
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Location Section - dark brown immersive
 function LocationSection() {
   return (
@@ -928,6 +995,7 @@ export default function Home() {
       <WashPackagesSection />
       <AboutSection />
       <GiftCardSection />
+      <WashBooksTeaser />
       <LocationSection />
       <ContactSection />
       <Footer />

@@ -71,6 +71,7 @@ export default function Navigation() {
             <div className="hidden lg:flex items-center gap-6">
               <Link href="/about-us" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>About Us</Link>
               <Link href="/services" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Fleet</Link>
+              <Link href="/wash-books" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Wash Books</Link>
               <Link href="/family-plan" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Family Plan</Link>
               <Link href="/environment" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Environment</Link>
               <Link href="/fundraising" className="font-display text-white font-extrabold text-sm uppercase hover:text-[#f7d70e] transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Fundraising</Link>
@@ -109,6 +110,7 @@ export default function Navigation() {
               <div className="flex flex-col gap-3">
                 <Link href="/about-us" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>About Us</Link>
                 <Link href="/services" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Fleet</Link>
+                <Link href="/wash-books" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Wash Books</Link>
                 <Link href="/family-plan" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Family Plan</Link>
                 <Link href="/environment" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Environment</Link>
                 <Link href="/fundraising" className="font-display text-white font-extrabold uppercase hover:text-[#f7d70e] transition-colors py-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>Fundraising</Link>
