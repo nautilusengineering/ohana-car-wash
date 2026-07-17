@@ -767,7 +767,7 @@ function GiftCardSection() {
       {showDrawer && (
         <IframeDrawer
           onClose={() => setShowDrawer(false)}
-          productId="4dbf336e-a114-4804-ac1d-c761a5222b6c"
+          embedUrl="https://www.nautilus-app.com/c/checkout/f49d5a90-454a-413a-962c-ecd7f3b8a3fb?embedded=true"
           title="Purchase a Gift Card"
         />
       )}
