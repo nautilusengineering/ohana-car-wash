@@ -47,7 +47,7 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4 text-[#D4A83A]">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link href="/about-us" className="text-white/70 hover:text-[#D4A83A] transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="text-white/70 hover:text-[#D4A83A] transition-colors">Services</Link></li>
+              <li><Link href="/fleet" className="text-white/70 hover:text-[#D4A83A] transition-colors">Fleet Program</Link></li>
               <li><a href="https://ohanacarwash.mywashaccount.com/#gift-card" className="text-white/70 hover:text-[#D4A83A] transition-colors">Gift Cards</a></li>
               <li><Link href="/careers" className="text-white/70 hover:text-[#D4A83A] transition-colors">Careers</Link></li>
             </ul>
