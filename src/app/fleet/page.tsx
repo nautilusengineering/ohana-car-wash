@@ -83,82 +83,6 @@ const fleetPricing = [
   },
 ];
 
-// Account benefits — from the flyer's "What Your Fleet Gets" panel.
-const benefits = [
-  {
-    title: "No Tags or Stickers",
-    desc: "Nothing to hand out and nothing to install — our camera reads the plate and opens the gate.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z M4 8h2l2-3h8l2 3h2a1 1 0 011 1v9a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z"
-      />
-    ),
-  },
-  {
-    title: "Monthly Usage Reports",
-    desc: "See exactly which vehicles washed and when, reported by plate every month.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M9 17v-4m3 4v-8m3 8v-2M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"
-      />
-    ),
-  },
-  {
-    title: "Swap Plates Anytime",
-    desc: "Add, swap, or remove vehicles whenever your fleet changes — no paperwork.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-      />
-    ),
-  },
-  {
-    title: "Washes Never Expire",
-    desc: "No contract, no monthly commitment. Buy a batch and use it at your own pace.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    ),
-  },
-  {
-    title: "Free Vacuums & Air Guns",
-    desc: "Every wash includes free vacuums and air guns — drivers can clean out the cab at no extra charge.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M14.121 15.536c-1.171 1.952-3.07 1.952-4.242 0-1.172-1.953-1.172-5.119 0-7.072 1.171-1.952 3.07-1.952 4.242 0M8 10.5h4m-4 3h4m9-1.5a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    ),
-  },
-  {
-    title: "Locally Owned",
-    desc: "Right here in Monroe — Liʻi Liʻi and the Ohana team look after every vehicle that rolls through.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-      />
-    ),
-  },
-];
-
 // Starter packs — flyer footnote: start with as few as 50 washes.
 const starterPacks = [
   { name: "Splash & Dash", total: "$400" },
@@ -482,7 +406,7 @@ export default function FleetPage() {
         </div>
       </section>
 
-      {/* What your fleet gets — white */}
+      {/* Package inclusions — white */}
       <section className="py-16 md:py-20 relative overflow-hidden">
         <img
           src="/corner-hibiscus-tl.png"
@@ -490,34 +414,6 @@ export default function FleetPage() {
           className="absolute top-10 -left-6 w-24 md:w-32 opacity-[0.08] pointer-events-none -rotate-6"
         />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <p className="font-script text-[#F7D711] text-2xl mb-3">Ohana Means Family</p>
-            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#715924]">
-              What Your Fleet Gets
-            </h2>
-          </div>
-
-          <div
-            data-scroll-row="benefits"
-            className="flex overflow-x-auto snap-x snap-mandatory scroll-px-4 gap-4 -mx-4 px-4 pb-3 max-w-5xl sm:mx-auto sm:px-0 sm:pb-0 sm:gap-6 sm:overflow-visible sm:grid sm:grid-cols-2 lg:grid-cols-3 mb-12"
-          >
-            {benefits.map((item) => (
-              <div
-                key={item.title}
-                className="snap-start shrink-0 w-[280px] sm:w-auto sm:shrink rounded-2xl p-6"
-                style={{ border: "4px solid #715924" }}
-              >
-                <div className="w-12 h-12 mb-4 bg-[#4AA2B9] rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {item.icon}
-                  </svg>
-                </div>
-                <h3 className="text-lg font-display font-extrabold text-[#715924] mb-1.5">{item.title}</h3>
-                <p className="text-sm text-[#715924]/70">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
           {/* Package inclusions */}
           <div className="max-w-5xl mx-auto">
             <p className="text-center text-sm font-extrabold uppercase tracking-wide text-[#715924]/60 mb-4">
