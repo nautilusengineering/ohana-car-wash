@@ -167,6 +167,39 @@ const starterPacks = [
   { name: "The Big Kahuna", total: "$950" },
 ];
 
+// Mike's Carwash comparison — from the flyer. Their prices are published fleet
+// rates as of September 28, 2026 for the closest comparable package.
+const comparison = [
+  {
+    ours: "The Big Kahuna",
+    theirs: "Ultimate+Ceramic",
+    us: [19.0, 17.75, 16.75, 16.0],
+    them: [22.0, 20.5, 19.5, 18.5],
+    save: "$2.50–$3.00",
+  },
+  {
+    ours: "Island Shine",
+    theirs: "Ultimate",
+    us: [14.6, 13.8, 13.0, 12.2],
+    them: [16.0, 15.25, 14.25, 13.5],
+    save: "$1.25–$1.45",
+  },
+  {
+    ours: "Tropical Breeze",
+    theirs: "Works",
+    us: [11.25, 10.65, 9.9, 9.45],
+    them: [14.25, 13.5, 12.5, 12.0],
+    save: "$2.55–$3.00",
+  },
+  {
+    ours: "Splash & Dash",
+    theirs: "Basic",
+    us: [8.0, 7.5, 7.3, 6.6],
+    them: [8.8, 8.25, 8.0, 7.25],
+    save: "$0.65–$0.80",
+  },
+];
+
 export default function FleetPage() {
   useNautilusEmbed();
 
@@ -201,7 +234,7 @@ export default function FleetPage() {
           </div>
 
           {/* Key promises */}
-          <div className="flex flex-wrap justify-center gap-3 mb-14">
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
             {["No contract", "No monthly commitment", "Washes never expire"].map((chip) => (
               <span
                 key={chip}
@@ -214,14 +247,39 @@ export default function FleetPage() {
             ))}
           </div>
 
+          {/* Compact primary CTA — verified phone + on-page inquiry form */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-14">
+            <a
+              href="tel:5133607205"
+              className="font-display px-6 py-2.5 bg-[#f7d70e] text-[#715924] font-extrabold rounded-lg hover:bg-[#e5c60d] transition-all border-2 border-[#715924]"
+              style={{ boxShadow: "3px 3px 0px 0px #715924" }}
+            >
+              Call (513) 360-7205
+            </a>
+            <a
+              href="#inquiry"
+              className="font-display px-6 py-2.5 bg-white text-[#1B5668] font-extrabold rounded-lg hover:bg-[#f0f8fa] transition-all border-2 border-[#1B5668]"
+              style={{ boxShadow: "3px 3px 0px 0px #1B5668" }}
+            >
+              Send a Fleet Inquiry
+            </a>
+          </div>
+
           <div className="text-center mb-10">
             <p className="font-script text-[#F7D711] text-2xl mb-3">Simple as a Day at the Beach</p>
             <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#715924]">How It Works</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
+          <div
+            data-scroll-row="steps"
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-px-4 gap-4 -mx-4 px-4 pb-3 max-w-6xl sm:mx-auto sm:px-0 sm:pb-0 sm:gap-5 sm:overflow-visible sm:grid sm:grid-cols-2 lg:grid-cols-5"
+          >
             {steps.map((step) => (
-              <div key={step.n} className="rounded-2xl p-5 text-center" style={{ border: "4px solid #715924" }}>
+              <div
+                key={step.n}
+                className="snap-start shrink-0 w-[270px] sm:w-auto sm:shrink rounded-2xl p-5 text-center"
+                style={{ border: "4px solid #715924" }}
+              >
                 <div
                   className="w-12 h-12 mx-auto mb-3 bg-[#4AA2B9] rounded-full flex items-center justify-center text-white font-display font-extrabold text-xl"
                   style={{ border: "3px solid #1B5668" }}
@@ -340,6 +398,86 @@ export default function FleetPage() {
                 ))}
               </div>
             </div>
+
+            {/* Mike's Carwash comparison */}
+            <div className="mt-12">
+              <p className="md:hidden text-center text-sm text-[#715924]/60 mb-3">
+                Swipe the table to see all volume tiers →
+              </p>
+              <div
+                className="rounded-xl overflow-hidden bg-white/95"
+                style={{ border: "4px solid #DEA726", boxShadow: "4px 4px 0px 2px #715924" }}
+              >
+                <div className="bg-[#DEA726] px-4 py-3 sm:flex items-center justify-between gap-4">
+                  <h3 className="font-display font-extrabold text-[#3A2A02] text-lg leading-tight">
+                    Compare Us to Mike&rsquo;s Carwash
+                  </h3>
+                  <span className="block sm:text-right text-xs font-extrabold uppercase tracking-wide text-[#3A2A02]/80 mt-1 sm:mt-0">
+                    Same volume · Comparable wash · Lower price at every level
+                  </span>
+                </div>
+                <div className="overflow-x-auto max-w-full">
+                  <table className="w-full min-w-[760px] border-collapse">
+                    <thead>
+                      <tr className="bg-[#FFFBF0]">
+                        <th className="text-left px-4 py-2.5 text-xs font-extrabold uppercase tracking-wide text-[#7A5B08]">
+                          Comparable Wash
+                        </th>
+                        {volumeTiers.map((tier) => (
+                          <th
+                            key={tier}
+                            className="px-3 py-2.5 text-xs font-extrabold uppercase tracking-wide text-[#7A5B08] text-center whitespace-nowrap"
+                          >
+                            {tier.replace(" Washes", "")}
+                          </th>
+                        ))}
+                        <th className="px-3 py-2.5 text-xs font-extrabold uppercase tracking-wide text-[#7A5B08] text-center whitespace-nowrap">
+                          You Save
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comparison.map((row, i) => (
+                        <tr key={row.ours} className={i % 2 === 1 ? "bg-[#FFFBF0]/60" : ""}>
+                          <td className="px-4 py-3 border-t border-[#DEA726]/30">
+                            <span className="block font-display font-extrabold text-[#715924] leading-tight">
+                              {row.ours}
+                            </span>
+                            <span className="block text-xs text-[#715924]/60 font-semibold">
+                              vs. {row.theirs}
+                            </span>
+                          </td>
+                          {row.us.map((price, j) => (
+                            <td
+                              key={volumeTiers[j]}
+                              className="px-3 py-3 text-center border-t border-[#DEA726]/30"
+                            >
+                              <span className="block font-extrabold text-[#1B5668]">
+                                ${price.toFixed(2)}
+                              </span>
+                              <span className="block text-xs text-[#96A3A7] line-through decoration-[#C9A24A]">
+                                ${row.them[j].toFixed(2)}
+                              </span>
+                            </td>
+                          ))}
+                          <td className="px-3 py-3 text-center border-t border-[#DEA726]/30">
+                            <span className="block font-extrabold text-[#17703A] text-sm whitespace-nowrap">
+                              {row.save}
+                            </span>
+                            <span className="block text-xs text-[#715924]/60">per wash</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="mt-3 text-xs text-[#715924]/60 text-center max-w-3xl mx-auto">
+                Mike&rsquo;s Carwash prices shown are their published fleet rates as of September 28,
+                2026, for the closest comparable wash package. Competitor pricing subject to change.
+                Ohana fleet pricing effective until revised.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -359,9 +497,16 @@ export default function FleetPage() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+          <div
+            data-scroll-row="benefits"
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-px-4 gap-4 -mx-4 px-4 pb-3 max-w-5xl sm:mx-auto sm:px-0 sm:pb-0 sm:gap-6 sm:overflow-visible sm:grid sm:grid-cols-2 lg:grid-cols-3 mb-12"
+          >
             {benefits.map((item) => (
-              <div key={item.title} className="rounded-2xl p-6" style={{ border: "4px solid #715924" }}>
+              <div
+                key={item.title}
+                className="snap-start shrink-0 w-[280px] sm:w-auto sm:shrink rounded-2xl p-6"
+                style={{ border: "4px solid #715924" }}
+              >
                 <div className="w-12 h-12 mb-4 bg-[#4AA2B9] rounded-xl flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {item.icon}
