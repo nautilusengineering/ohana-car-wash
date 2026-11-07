@@ -32,8 +32,8 @@ export default function FamilyPlanPage() {
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a5 5 0 00-10 0v2m10 0h1a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2v-8a2 2 0 012-2h1m10 0H7m5 5v3m-3-3h6" />,
               },
               {
-                title: "Flexible Plans",
-                desc: "Mix and match wash levels for each vehicle.",
+                title: "One Simple Plan",
+                desc: "Every vehicle on the same plan, same card, billed together.",
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 8l2 2 4-4" />,
               },
               {
@@ -107,7 +107,7 @@ export default function FamilyPlanPage() {
               </ol>
 
               <div className="mt-8 pt-6 border-t border-white/20 text-center">
-                <p className="text-white/70 text-sm mb-4">Note: All additional vehicles must be on the same plan as your current membership.</p>
+                <p className="text-white/70 text-sm mb-4">Note: All vehicles must be on the same plan, on the same card, and billed at the same time.</p>
                 <a
                   href="https://www.nautilus-app.com/c/ohana/p/"
                   target="_blank"
