@@ -395,7 +395,7 @@ function WashPackagesSection() {
       chipBorder: "#8B6B15",
       chipText: "#6B4F10",
       premium: true,
-      productId: "0f60ff5c-07b6-49b9-bc75-fd77a729f0b4",
+      productId: "8cee08c3-5a55-4a13-8676-9d0a19701c91",
     },
     {
       name: "Island Shine",
@@ -411,7 +411,7 @@ function WashPackagesSection() {
       chipBorder: "#2A6E85",
       chipText: "#1B5668",
       premium: false,
-      productId: "e2b5d51e-2e46-489d-8692-1f93e23f537b",
+      productId: "f165902e-b4d9-4500-a5df-96d6de9b1e8a",
     },
     {
       name: "Tropical Breeze",
@@ -427,7 +427,7 @@ function WashPackagesSection() {
       chipBorder: "#A07818",
       chipText: "#6B4F10",
       premium: false,
-      productId: "171c8a59-75b0-4447-86d7-50385e4d9b83",
+      productId: "1f988aca-508f-46b0-af16-eeba8854ca86",
     },
     {
       name: "Splash & Dash",
@@ -443,7 +443,7 @@ function WashPackagesSection() {
       chipBorder: "",
       chipText: "",
       premium: false,
-      productId: "4d6faf8e-9421-4334-a5e8-1e1fef8fb4e7",
+      productId: "3339e82f-d8a2-4b04-9d8c-cd20654828a5",
     },
   ];
 
@@ -545,9 +545,12 @@ function WashPackagesSection() {
                         </span>
                       </div>
                       {isUnlimited && (
-                        <div className="mt-2 inline-block bg-[#715924] text-[#f7d70e] text-xs font-bold px-3 py-1 rounded-full">
-                          First Month: ${pkg.firstMonth}
-                        </div>
+                        <>
+                          <div className="mt-2 inline-block bg-[#715924] text-[#f7d70e] text-xs font-bold px-3 py-1 rounded-full">
+                            First Month: ${pkg.firstMonth}
+                          </div>
+                          <p className="mt-1 text-[11px] font-semibold text-[#715924]/70">New members only</p>
+                        </>
                       )}
                     </div>
 
